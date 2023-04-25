@@ -2,7 +2,7 @@ import os
 
 import numpy as np
 
-from structure import Intrinsic, Extrinsic
+from .structure import Intrinsic, Extrinsic
 
 def parse(input):
     camerasfile = os.path.join(input, 'cameras.txt')
@@ -89,7 +89,7 @@ def dump(data, output):
             t = w2c[:3, 3].reshape(-1)
             qvec = rotmat2qvec(R)
             f.write('{} {} {} {} {} {} {} {} 1 {}\n'.format(
-                i + 1, *qvec, *t, '{:03d}.jpg'.format(i)))
+                i + 1, *qvec, *t, '{:03d}.png'.format(i)))
             f.write('\n')
 
     # points

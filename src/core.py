@@ -1,7 +1,8 @@
 import os
 
-import colmap
-import llff
+from . import colmap
+from . import llff
+from . import mpeg
 
 def parse(input, input_format=None):
     if input_format is None:
@@ -19,6 +20,9 @@ def parse(input, input_format=None):
     # poses_bounds.npy
     if input_format == 'llff':
         return llff.parse(input)
+    # mpeg
+    if input_format == 'mpeg':
+        return mpeg.parse(input)
     
     raise ValueError('Unknown input format')
 

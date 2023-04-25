@@ -1,6 +1,6 @@
 import numpy as np
 
-from structure import Intrinsic, Extrinsic
+from .structure import Intrinsic, Extrinsic
 
 def parse(input):
     poses_bounds = np.load(input)

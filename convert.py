@@ -1,6 +1,6 @@
 import argparse
 
-from core import parse, dump
+from src.core import parse, dump
 
 def convert(input, output, input_format=None, output_format=None):
     data = parse(input, input_format)
